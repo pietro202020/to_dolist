@@ -4,7 +4,9 @@ import {useState, useEffect} from 'react'
 function App() {
 
 
-  const [todos,setTodos] = useState([])
+  const [todos,setTodos] = useState([
+    'Hahaha'
+  ])
 
   const [todoValue, setTodoValue] = useState('')
 
