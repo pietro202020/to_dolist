@@ -1,0 +1,23 @@
+{
+  "scenario": {
+    "name": "Registration",
+    "actors": ["user", "system"],
+    "description": "Registration of user in the system",
+    "steps": [
+      {
+        "id": 1,
+        "actor": "user",
+        "keyword": "",
+        "steps": [],
+        "action": "Chooses to register"
+      },
+      {
+        "id": 2,
+        "actor": "system",
+        "keyword": "",
+        "steps": [],
+        "action": "Displays the registration form."
+      }
+    ]
+  }
+}

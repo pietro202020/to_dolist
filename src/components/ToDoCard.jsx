@@ -1,18 +1,18 @@
-import React from 'react'
+import React from "react";
 
-export default function ToDoCard(props) {
-    const {children, todoIndex, deleteTask, editTask} = props
+export default function ToDoCard({ todo, todoIndex, deleteTask, editTask }) {
   return (
-    <li className='todoItem'>
-        {children}
-        <div className='actionsContainer'>
-            <button onClick={()=>deleteTask(todoIndex)}>
-                <i className="fa-solid fa-trash"></i>
-            </button>
-            <button onClick={()=>editTask(todoIndex)}>
-                <i className="fa-solid fa-pen-to-square"></i>
-            </button>
-        </div>
-    </li>
-  )
+    <div className="todoItem">
+        
+      <p>{todo}</p>
+      <div className="actionsContainer">
+        <button onClick={() => deleteTask(todoIndex)}>
+          <i className="fa-solid fa-trash"></i> Delete
+        </button>
+        <button onClick={() => editTask(todoIndex)}>
+          <i className="fa-solid fa-pen-to-square"></i> Edit
+        </button>
+      </div>
+    </div>
+  );
 }
