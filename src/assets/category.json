@@ -1,9 +1,14 @@
 {
   "scenario": {
     "name": "Registration",
-    "actors": ["user", "system"],
+    "actors":
+    [
+      "user",
+      "system"
+    ],
     "description": "Registration of user in the system",
-    "steps": [
+    "steps":
+    [
       {
         "id": 1,
         "actor": "user",
@@ -17,6 +22,64 @@
         "keyword": "",
         "steps": [],
         "action": "Displays the registration form."
+      },
+      {
+        "id": 3,
+        "actor": "user",
+        "keyword": "",
+        "steps": [],
+        "action": "Fills out the registration form with personal details."
+      },
+      {
+        "id": 4,
+        "actor": "user",
+        "keyword": "",
+        "steps": [],
+        "action": "Accepts terms and conditions."
+      },
+      {
+        "id": 5,
+        "actor": "user",
+        "keyword": "",
+        "steps": [],
+        "action": "Submits the registration form."
+      },
+      {
+        "id": 6,
+        "actor": "system",
+        "keyword": "",
+        "steps": [],
+        "action": "Validates the submitted details."
+      },
+      {
+        "id": 7,
+        "actor": "system",
+        "keyword": "",
+        "action": "Sends a confirmation email to the user.",
+        "steps":
+        [
+            {
+              "id": 1,
+              "actor": "user",
+              "keyword": "",
+              "steps": [],
+              "action": "Receives and opens the confirmation email."
+            },
+            {
+              "id": 2,
+              "actor": "user",
+              "keyword": "",
+              "steps": [],
+              "action": "Clicks the confirmation link."
+            },
+            {
+              "id": 3,
+              "actor": "system",
+              "keyword": "",
+              "steps": [],
+              "action": "Verifies the email and activates the account."
+            }
+          ]
       }
     ]
   }

@@ -1,38 +1,36 @@
 import React from "react";
 import ToDoCard from "./ToDoCard";
 
-export default function ToDoList({ todos, deleteTask, editTask, reorderTodos }) {
+export default function ToDoList({ steps, reorderSteps, addSubStep }) {
   const handleDragStart = (event, index) => {
-    event.dataTransfer.setData("text/plain", index); // Store the dragged item's index
+    event.dataTransfer.setData("text/plain", index);
   };
 
   const handleDragOver = (event) => {
-    event.preventDefault(); // Prevent default behavior to allow drop
+    event.preventDefault();
   };
 
   const handleDrop = (event, dropIndex) => {
     const draggedIndex = parseInt(event.dataTransfer.getData("text/plain"), 10);
     if (draggedIndex !== dropIndex) {
-      reorderTodos(draggedIndex, dropIndex);
+      reorderSteps(draggedIndex, dropIndex);
     }
-    event.dataTransfer.clearData();
   };
 
   return (
     <ul className="main">
-      {todos.map((todo, index) => (
+      {steps.map((step, index) => (
         <li
-          key={index}
+          key={step.id}
           draggable
           onDragStart={(event) => handleDragStart(event, index)}
           onDragOver={handleDragOver}
           onDrop={(event) => handleDrop(event, index)}
         >
           <ToDoCard
-            todo={todo}
-            todoIndex={index}
-            deleteTask={deleteTask}
-            editTask={editTask}
+            step={step}
+            parentIndex={index}
+            addSubStep={addSubStep}
           />
         </li>
       ))}
